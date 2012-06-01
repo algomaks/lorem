@@ -2,6 +2,7 @@
 class UsersController extends AppController {
 
 	var $name = 'Users';
+	var $uses = array('User', 'Coordinate');
 	
 	function index() {
 		$this->User->recursive = 0;
@@ -93,6 +94,15 @@ class UsersController extends AppController {
 		if (!empty($this->data)) 
 		{
 			$this->data['User']['registered'] = 1;
+			
+			// get location from postal code
+			$location = $this->addressToCoordinates($this->data['User']['postal_code']);
+			
+			// save coordinates
+			$coordinate['Coordinate']['user_id'] = $this->data['User']['id'];
+			$coordinate['Coordinate']['latitude'] = $location->lat;
+			$coordinate['Coordinate']['longitude'] = $location->lng;
+			$this->Coordinate->save($coordinate);
 			
 			if ($this->User->save($this->data)) 
 			{

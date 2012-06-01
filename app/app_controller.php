@@ -2,6 +2,7 @@
 
 App::import('Vendor', 'facebook/facebook');
 App::import('Lib', 'convenience_functions');
+App::import('Core', 'HttpSocket');
 
 class AppController extends Controller {
 
@@ -13,6 +14,7 @@ class AppController extends Controller {
 	{
 		$this->setVars();
 		$this->fbAuth();
+		$this->loadVars();
 	}
 	
 	function setVars()
@@ -29,6 +31,16 @@ class AppController extends Controller {
 
 	function loadVars()
 	{
+		// load random people
+		$frontPageUsers = $this->User->find(
+				'all',
+				array(
+					'order' => 'RAND()',
+					'limit' => 6
+				)
+		);
+		$this->set('frontPageUsers', $frontPageUsers);
+		
 		
 	}
 	
@@ -91,6 +103,24 @@ class AppController extends Controller {
 		}
 		
 		$this->set('currentUser', $this->currentUser);
+	}
+	
+	function addressToCoordinates($address) {
+		$BASE_URL = 'http://maps.googleapis.com/maps/api/geocode/json';
+
+		$socket = new HttpSocket();
+
+		$args = array('address' => $address,
+					  'sensor' => 'false');
+
+		$results = json_decode($socket->get($BASE_URL, $args));
+
+		if ($results != null && sizeof($results->results) >= 1) {
+			$loc = $results->results[0]->geometry->location;
+			return $loc;
+		} else {
+			return null;
+		}
 	}
 }
 
