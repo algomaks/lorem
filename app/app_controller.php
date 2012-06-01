@@ -39,9 +39,7 @@ class AppController extends Controller {
 					'limit' => 6
 				)
 		);
-		$this->set('frontPageUsers', $frontPageUsers);
-		
-		
+		$this->set('frontPageUsers', $frontPageUsers);	
 	}
 	
 	function fbAuth()
