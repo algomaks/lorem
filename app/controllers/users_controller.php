@@ -81,6 +81,10 @@ class UsersController extends AppController {
 				$this->redirect(array('action' => 'register', $this->currentUser['User']['id']));
 			}
 		}
+		else{
+			// user not logged in
+			$this->layout = null;
+		}
 	}
 	
 	function register($id = null)
@@ -119,7 +123,7 @@ class UsersController extends AppController {
 		{
 			$this->data = $this->User->read(null, $id);
 		}
-		
+
 		$universities = $this->User->University->find('list');
 		$nationalities = $this->User->Nationality->find('list');
 		$languages = $this->User->Language->find('list');
