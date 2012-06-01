@@ -1,0 +1,225 @@
+body{
+	background: #337733;	
+	font-family: Lucida Grande, Verdana;	
+}
+
+.clear{
+clear: both;	
+}
+
+h1{
+display:none;	
+}
+
+#logo{
+	height: 97px;
+	width: 347px;
+	float:right;
+	font-size: 5em;
+	background: url('http://localhost/Expat/images/logo140.png');
+}
+
+#page {
+width: 1000px;
+margin: 0 auto;
+min-height: 500px;
+background: white;
+box-shadow: 3px 3px 4px #000;
+padding: 20px;
+background: #fff4f4;
+}
+
+#footer{
+text-align: center;
+height: 50px;
+}
+
+#footer ul{
+width: 200px;
+margin: 10px auto;
+}
+
+#footer ul li{
+float: left;
+padding: 0 10px;
+list-style-type: none;
+border-right: 1px solid black;
+border-left: 1px solid black;
+}
+
+#footer ul li a{
+	text-decoration: none;
+	color: black;
+	font-size: .8em;	
+}
+
+
+#main{
+}
+
+
+#search{
+height: 60px;
+padding:30px 10px 10px 10px;
+}
+
+#search input, select{
+	width: 180px;	
+}
+
+.submit input{
+	font-size: 2em;	
+	box-shadow: 0px 0px 10px;
+}
+
+#search .submit input{
+	width: 60px;	
+	20px;
+	margin-top: 10px;
+}
+
+.container{
+width: 230px;
+float: left;
+}
+
+#people{
+padding-top: 20px;
+display:none;
+}
+
+.person{
+box-shadow: 1px 2px 2px 0px;
+font-size: .8em;
+width: 140px;
+padding: 10px;
+float:left;
+margin: 3px;
+background: white;
+}
+
+.person .name{
+font-weight: bold;
+}
+
+.person .languages{
+	background: url('http://localhost/Expat/Images/speech.jpg') no-repeat;
+	padding-left: 15px;
+}
+
+.person .nationality{
+	background: url('http://localhost/Expat/Images/flag.png') no-repeat;
+	padding-left: 15px;
+}
+
+.person .interests{
+	background: url('http://localhost/Expat/Images/star_icon2.png') no-repeat;
+	padding-left: 15px;
+}
+
+.person .image{
+	text-align: center;
+}
+
+.person .top{
+	height: 100px;	
+}
+
+.person label{
+font-weight:bold;	
+}
+
+.person .connect{
+font-size: .8em;
+margin-left: 40px;
+}
+
+.person.selected{
+background: lightblue;	
+}
+
+#display_people{
+text-align: center;
+padding-top: 20px;
+}
+
+#hide_people{
+display:none;	
+}
+
+#map_canvas {
+    height: 450px;
+  }
+
+#welcome{
+	margin-top: 60px;
+}
+
+#welcome #logo {
+	height: 204px;
+	width: 884px;
+	margin-left: 70px;
+	float: none;
+	font-size: 5em;
+	background: url('http://localhost/Expat/images/logo_big.png');
+}
+
+#welcome .tagline {
+	font-size: 2em;	
+	text-align: center;
+}
+
+#fb_login {
+	text-align: center;
+	margin-top: 100px;
+	height: 100px;	
+}
+
+#user_form{
+	
+}
+
+#user_form .input{
+padding: 10px;	
+}
+
+input,select {
+padding: 5px;	
+}
+
+input#UserEmail, input#UserPictureUrl, input#UserAddress{
+width: 300px;	
+}
+
+#user_form label{
+width: 200px;
+display:block;
+float:left;
+}
+
+#user_form select{
+width: 300px;	
+}
+
+#user_form fieldset{
+	border: none;	
+}
+
+#user_form legend{
+	font-size: 2em;
+	font-weight: bold;	
+}
+
+#user_form .date select{
+	width: 100px;	
+}
+
+#user_form .pic_url {
+float: right;
+margin-right: 200px;
+}
+
+#user_form .submit{
+text-align: center;
+margin-top: 30px;
+}
